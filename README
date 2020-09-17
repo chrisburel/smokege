@@ -19,3 +19,14 @@ For SmokeQt:
  ./generate.pl
  make
 
+
+Installing
+==========
+
+apt-get install libclang-perl libclang-dev
+mkdir bld
+cd bld
+cmake ..
+make
+make install
+

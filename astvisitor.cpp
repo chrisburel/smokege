@@ -224,7 +224,7 @@ Class* SmokegenASTVisitor::registerClass(const clang::CXXRecordDecl* clangClass)
             }
             if (const clang::CXXConstructorDecl* ctor = clang::dyn_cast<clang::CXXConstructorDecl>(method)) {
                 newMethod.setIsConstructor(true);
-                if (ctor->isExplicit()) {
+                if (ctor->getExplicitSpecifier().isExplicit()) {//PTZ191127
                     newMethod.setFlag(Member::Explicit);
                 }
             }
